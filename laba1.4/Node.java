@@ -1,4 +1,4 @@
-public class Node {
+public class Node { //Звено однонаправленного списка
     private int number;
     private Node next;
 
