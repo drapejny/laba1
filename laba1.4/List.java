@@ -1,4 +1,4 @@
-public class List {
+public class List { //Однонаправленный список
     private Node head;
     private Node current;
 
