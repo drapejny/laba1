@@ -1,19 +1,21 @@
 public class Main {
     public static void main(String args[]) {
         List list = new List();
-        list.add(new Node("Кост А.Б.", 89));
-        list.add(new Node("Андрюков С.С.", 8));
-        list.add(new Node("Жилинская С.В.", 23));
-        list.add(new Node("Автобус Н.Н.", 24));
-        list.add(new Node("Автилова К.Ж.", 0));
-        list.add(new Node("Бабич Б.Б.", 243));
-        list.add(new Node("Носов Ж.Ж.", 24));
-        list.add(new Node("Носков А.А.", 2424));
-        list.add(new Node("Притыцкий С.Ф.", 432415));
-        list.add(new Node("Поляк А.А.", 89148291));
-        list.add(new Node("Яблонский А.А.", 898989));
-        list.add(new Node("Бабичева А.Г.", 2839129));
-        list.add(new Node("Мохно П.П.", 24891249));
+        list.add(new Node("Кост", 89));
+        list.add(new Node("Андрюков", 8));
+        list.add(new Node("Автобус", 23));
+        list.add(new Node("Автобус", 24));
+        list.add(new Node("Автилова", 0));
+        list.add(new Node("Бабич", 243));
+        list.add(new Node("Носов", 24));
+        list.add(new Node("Носков", 2424));
+        list.add(new Node("Притыцкий", 432415));
+        list.add(new Node("Поляк", 89148291));
+        list.add(new Node("Яблонский", 898989));
+        list.add(new Node("Бабичева", 2839129));
+        list.add(new Node("Мохно", 24891249));
+        list.add(new Node("Носов",132123123));
+        list.add(new Node("Носов",3444444));
         for (int i = 0; i < list.getSize(); i++) {
             System.out.println(list.getCurrent().getName());
             list.setCurrent(list.getCurrent().getNext());
@@ -21,7 +23,7 @@ public class Main {
         System.out.println();
         
         searchName(list,55);
-        searchNumber(list,"Мохно П.П.");
+        searchNumber(list,"Носов");
 
     }
     public static void searchNumber(List list, String name){
@@ -30,7 +32,12 @@ public class Main {
             list.setCurrent(list.getCurrent().getNext());
         if(list.getCurrent() == null)
             System.out.println("Абонент отсутствует");
-        else System.out.println(name + " " +  list.getCurrent().getNumber());
+        else{
+            while(list.getCurrent() != null && list.getCurrent().getName().contentEquals(name)){
+                System.out.println(name + " " +  list.getCurrent().getNumber());
+                list.setCurrent(list.getCurrent().getNext());
+            }
+        }
     }
 
     public static void  searchName(List list, int number) {
