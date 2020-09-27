@@ -1,4 +1,4 @@
-public class Listok { //Двунаправленный список
+public class Listok {
     private Unit head;
     private Unit current;
 

@@ -1,11 +1,13 @@
 public class Main {
     public static void main(String args[]) {
         Listok listok = new Listok();
+        listok.add(new Unit(9000231));
         listok.add(new Unit(1234567));
         listok.add(new Unit(2345678));
         listok.add(new Unit(333));
         listok.add(new Unit(3456789));
         listok.add(new Unit(4567890));
+        listok.add(new Unit(9000231));
         listok.add(new Unit(222));
         listok.add(new Unit(111));
         System.out.println("Элементы двунаправленного списка:");

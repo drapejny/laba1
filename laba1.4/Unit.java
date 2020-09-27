@@ -1,4 +1,4 @@
-public class Unit { //Звено двунаправленного списка
+public class Unit {
     private int number;
     private Unit next;
     private Unit prev;

@@ -1,4 +1,4 @@
-public class List { //Однонаправленный список
+public class List {
     private Node head;
     private Node current;
 
@@ -6,9 +6,14 @@ public class List { //Однонаправленный список
         if (head == null) {
             head = node;
             current = head;
+        } else if (node.getNumber() < head.getNumber()) {
+            node.setNext(head);
+            head = node;
         } else {
+            while (current.getNext() != null && node.getNumber() > current.getNext().getNumber())
+                current = current.getNext();
+            node.setNext(current.getNext());
             current.setNext(node);
-            current = current.getNext();
         }
     }
 
